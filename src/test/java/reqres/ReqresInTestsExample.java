@@ -1,104 +1,110 @@
 package reqres;
 
+import reqres.models.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static io.restassured.RestAssured.given;
-import static io.restassured.http.ContentType.JSON;
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.notNullValue;
+import static org.hamcrest.Matchers.*;
+import static org.junit.jupiter.api.Assertions.*;
+import static reqres.Specs.*;
 
 public class ReqresInTestsExample {
 
     @Test
     @DisplayName("Создание пользователя")
     void createUserTest() {
-        String body = "{ \"name\": \"Tester\", \"job\": \"Test-manager\"}";
+        CreateUser data = new CreateUser();
+        data.setName("Tester");
+        data.setJob("Test-manager");
 
         given()
-                .log().uri()
-                .contentType(JSON)
-                .body(body)
+                .spec(request)
+                .body(data)
                 .when()
-                .post("https://reqres.in/api/users")
+                .post("/users")
                 .then()
                 .log().status()
                 .log().body()
-                .statusCode(201)
-                .body("name", is("Tester"))
-                .body("job", is("Test-manager"));
-    }
-
-    @Test
-    @DisplayName("Пользователь не создается если не передать body запроса")
-    void createUserFailTest() {
-        given()
-                .log().uri()
-                .when()
-                .post("https://reqres.in/api/users")
-                .then()
-                .log().status()
-                .log().body()
-                .statusCode(415);
+                .spec(response201)
+                .extract().as(UserData.class);
+        assertEquals("Tester", data.getName());
+        assertEquals("Test-manager", data.getJob());
     }
 
     @Test
     @DisplayName("Получение инфо пользователя по id")
     void getUserInfoByIdTest() {
-        given()
-                .log().uri()
+        UserData data = given()
+                .spec(request)
                 .when()
-                .get("https://reqres.in/api/users/9")
+                .get("/users/9")
                 .then()
-                .log().status()
+                .spec(response200)
                 .log().body()
-                .statusCode(200)
-                .body("data.last_name", is("Funke"),
-                        "data.email", is("tobias.funke@reqres.in"),
-                        "support.url", is("https://reqres.in/#support-heading"));
+                .extract().as(UserData.class);
+        assertEquals(9, data.getUser().getId());
+        assertEquals("tobias.funke@reqres.in", data.getUser().getEmail());
     }
 
     @Test
     @DisplayName("Пользователь не найден")
     void getUserByIdNotFoundTest() {
         given()
-                .log().uri()
+                .spec(request)
                 .when()
-                .get("https://reqres.in/api/users/999999")
+                .get("/users/999999")
                 .then()
                 .log().status()
                 .log().body()
-                .statusCode(404);
+                .spec(response404);
     }
 
     @Test
-    @DisplayName("Login пользователя")
-    void loginTest() {
-        String data = "{ \"email\": \"eve.holt@reqres.in\", \"password\": \"cityslicka\" }";
-
+    @DisplayName("Проверка получения списка пользователей")
+    void listOfUsersWithGroovyTest(){
         given()
-                .log().uri()
-                .contentType(JSON)
-                .body(data)
+                .spec(request)
                 .when()
-                .post("https://reqres.in/api/login")
+                .get("/users?page=2")
                 .then()
                 .log().body()
+                .body("data.findAll{it.id}.last_name.flatten()",hasItem("Howell"))
+                .body("data.findAll{it.id == 7}.email", hasItem("michael.lawson@reqres.in"));
+    }
+
+    @Test
+    @DisplayName("Проверка обновления данных пользователя")
+    void checkUpdateUser() {
+        CreateUser data = new CreateUser();
+        data.setName("TestBoss");
+        data.setJob("Boss");
+
+        given()
+                .spec(request)
+                .body(data)
+                .when()
+                .put("/users/2")
+                .then()
                 .log().status()
-                .statusCode(200)
-                .body("token", notNullValue());
+                .log().body()
+                .spec(response200)
+                .body("name", is("TestBoss"))
+                .body("job", is("Boss"))
+                .extract().as(UserData.class);
     }
 
     @Test
     @DisplayName("Удаление пользователя")
     void deleteUserByIdTest() {
         given()
-                .log().uri()
+                .spec(request)
                 .when()
-                .delete("https://reqres.in/api/users/5")
+                .delete("/users/5")
                 .then()
                 .log().status()
                 .log().body()
-                .statusCode(204);
+                .spec(response204);
     }
 }

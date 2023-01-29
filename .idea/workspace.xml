@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8276281-dbaa-4bba-a77f-9da062b4e74e" name="Changes" comment="1st">
-      <change afterPath="$PROJECT_DIR$/src/test/java/reqres/ReqresInTestExample.java" afterDir="false" />
+    <list default="true" id="e8276281-dbaa-4bba-a77f-9da062b4e74e" name="Changes" comment="Simple tests">
+      <change afterPath="$PROJECT_DIR$/src/test/java/reqres/Specs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/reqres/models/CreateUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/reqres/models/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/reqres/models/UserData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/reqres/ReqresInTestsExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/reqres/ReqresInTestsExample.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +29,17 @@
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="qa_guru_rest_api" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
@@ -36,6 +51,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -51,11 +71,12 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.ReqresInTestExample.getUserInfoById">
-    <configuration name="ReqresInTestExample" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.ReqresInTestsExample">
+    <configuration name="ReqresInTestsExample" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -68,7 +89,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;reqres.ReqresInTestExample&quot;" />
+            <option value="&quot;reqres.ReqresInTestsExample&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -78,7 +99,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ReqresInTestExample.createUsersTestFail" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ReqresInTestsExample.deleteUserByIdTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -91,7 +112,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;reqres.ReqresInTestExample.createUsersTestFail&quot;" />
+            <option value="&quot;reqres.ReqresInTestsExample.deleteUserByIdTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -101,7 +122,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ReqresInTestExample.getUserIdNotFound" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ReqresInTestsExample.listOfUsersTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -114,7 +135,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;reqres.ReqresInTestExample.getUserIdNotFound&quot;" />
+            <option value="&quot;reqres.ReqresInTestsExample.listOfUsersTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -124,7 +145,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ReqresInTestExample.getUserInfoById" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ReqresInTestsExample.listOfUsersWithGroovyTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -137,7 +158,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;reqres.ReqresInTestExample.getUserInfoById&quot;" />
+            <option value="&quot;reqres.ReqresInTestsExample.listOfUsersWithGroovyTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -147,7 +168,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ReqresInTestExample.loginTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ReqresInTestsExample.loginTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -160,7 +181,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;reqres.ReqresInTestExample.loginTest&quot;" />
+            <option value="&quot;reqres.ReqresInTestsExample.loginTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -172,11 +193,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.ReqresInTestExample.getUserInfoById" />
-        <item itemvalue="Gradle.ReqresInTestExample" />
-        <item itemvalue="Gradle.ReqresInTestExample.getUserIdNotFound" />
-        <item itemvalue="Gradle.ReqresInTestExample.loginTest" />
-        <item itemvalue="Gradle.ReqresInTestExample.createUsersTestFail" />
+        <item itemvalue="Gradle.ReqresInTestsExample" />
+        <item itemvalue="Gradle.ReqresInTestsExample.deleteUserByIdTest" />
+        <item itemvalue="Gradle.ReqresInTestsExample.listOfUsersWithGroovyTest" />
+        <item itemvalue="Gradle.ReqresInTestsExample.listOfUsersTest" />
+        <item itemvalue="Gradle.ReqresInTestsExample.loginTest" />
       </list>
     </recent_temporary>
   </component>
@@ -189,7 +210,9 @@
       <option name="presentableId" value="Default" />
       <updated>1674384473929</updated>
       <workItem from="1674384477227" duration="105000" />
-      <workItem from="1674384705789" duration="3181000" />
+      <workItem from="1674384705789" duration="5482000" />
+      <workItem from="1674503542753" duration="5376000" />
+      <workItem from="1674981419739" duration="4738000" />
     </task>
     <task id="LOCAL-00001" summary="1st">
       <created>1674385122277</created>
@@ -198,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674385122277</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Simple tests">
+      <created>1674390138690</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1674390138690</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,6 +247,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1st" />
-    <option name="LAST_COMMIT_MESSAGE" value="1st" />
+    <MESSAGE value="Simple tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Simple tests" />
   </component>
 </project>
