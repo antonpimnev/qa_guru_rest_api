@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8276281-dbaa-4bba-a77f-9da062b4e74e" name="Changes" comment="Simple tests">
-      <change afterPath="$PROJECT_DIR$/src/test/java/reqres/Specs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/reqres/models/CreateUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/reqres/models/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/reqres/models/UserData.java" afterDir="false" />
+    <list default="true" id="e8276281-dbaa-4bba-a77f-9da062b4e74e" name="Changes" comment="Reqres.in tests +Lombok +Groovy">
+      <change afterPath="$PROJECT_DIR$/src/test/java/demowebshop/DemowebshopTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/reqres/ReqresInTestsExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/reqres/ReqresInTestsExample.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +48,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="lombokGroovy" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -75,8 +70,8 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.ReqresInTestsExample">
-    <configuration name="ReqresInTestsExample" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.DemowebshopTest">
+    <configuration name="DemowebshopTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -89,7 +84,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;reqres.ReqresInTestsExample&quot;" />
+            <option value="&quot;demowebshop.DemowebshopTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -99,7 +94,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ReqresInTestsExample.deleteUserByIdTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="DemowebshopTest.addToCartAnonymousTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -112,7 +107,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;reqres.ReqresInTestsExample.deleteUserByIdTest&quot;" />
+            <option value="&quot;demowebshop.DemowebshopTest.addToCartAnonymousTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -122,7 +117,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ReqresInTestsExample.listOfUsersTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="DemowebshopTest.subscribeEmailTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -135,7 +130,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;reqres.ReqresInTestsExample.listOfUsersTest&quot;" />
+            <option value="&quot;demowebshop.DemowebshopTest.subscribeEmailTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -145,7 +140,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ReqresInTestsExample.listOfUsersWithGroovyTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="DemowebshopTest.subscribeWithInvalidEmailTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -158,7 +153,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;reqres.ReqresInTestsExample.listOfUsersWithGroovyTest&quot;" />
+            <option value="&quot;demowebshop.DemowebshopTest.subscribeWithInvalidEmailTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -168,7 +163,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ReqresInTestsExample.loginTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="DemowebshopTest.voteRegisteredUserTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -181,7 +176,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;reqres.ReqresInTestsExample.loginTest&quot;" />
+            <option value="&quot;demowebshop.DemowebshopTest.voteRegisteredUserTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -193,11 +188,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.ReqresInTestsExample" />
-        <item itemvalue="Gradle.ReqresInTestsExample.deleteUserByIdTest" />
-        <item itemvalue="Gradle.ReqresInTestsExample.listOfUsersWithGroovyTest" />
-        <item itemvalue="Gradle.ReqresInTestsExample.listOfUsersTest" />
-        <item itemvalue="Gradle.ReqresInTestsExample.loginTest" />
+        <item itemvalue="Gradle.DemowebshopTest" />
+        <item itemvalue="Gradle.DemowebshopTest.addToCartAnonymousTest" />
+        <item itemvalue="Gradle.DemowebshopTest.subscribeEmailTest" />
+        <item itemvalue="Gradle.DemowebshopTest.subscribeWithInvalidEmailTest" />
+        <item itemvalue="Gradle.DemowebshopTest.voteRegisteredUserTest" />
       </list>
     </recent_temporary>
   </component>
@@ -212,7 +207,10 @@
       <workItem from="1674384477227" duration="105000" />
       <workItem from="1674384705789" duration="5482000" />
       <workItem from="1674503542753" duration="5376000" />
-      <workItem from="1674981419739" duration="4738000" />
+      <workItem from="1674981419739" duration="4949000" />
+      <workItem from="1675785959422" duration="751000" />
+      <workItem from="1675835939540" duration="10000" />
+      <workItem from="1676048246750" duration="4216000" />
     </task>
     <task id="LOCAL-00001" summary="1st">
       <created>1674385122277</created>
@@ -228,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674390138690</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Reqres.in tests +Lombok +Groovy">
+      <created>1674996604481</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1674996604481</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,6 +253,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1st" />
     <MESSAGE value="Simple tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Simple tests" />
+    <MESSAGE value="Reqres.in tests +Lombok +Groovy" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reqres.in tests +Lombok +Groovy" />
   </component>
 </project>
