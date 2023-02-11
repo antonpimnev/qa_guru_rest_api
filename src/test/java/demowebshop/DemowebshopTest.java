@@ -22,7 +22,7 @@ public class DemowebshopTest {
         +"D8B0BE3C2AAD66119ED5A7D7BE4B8AFD4466261F1E324C686802584257D2678872C75ED"
         +"4B07E2084718EE582C7D9847B50802CB10286EABC29A7C0BBDBCA4B3E42F09B7F6B687DF3B6555847646803";
     String answerId = "pollAnswerId=2";
-    String email = "tester.pimnev@gmail.com";
+    String email = "email=tester.pimnev@gmail.com";
     String emailInvalid = "======gmail.com";
     String body = "product_attribute_72_5_18=53"
             +"&product_attribute_72_6_19=55"
@@ -76,20 +76,20 @@ public class DemowebshopTest {
     }
 
     //По непонятной мне причине данный тест не хочет проходить. Там какие-то сложносоставные куки похоже нужно добавлять :(
-//    @Test
-//    @DisplayName("Проверка подписки на новости с валидным email")
-//    void subscribeEmailTest() {
-//        given()
-//                .contentType("application/x-www-form-urlencoded; charset=UTF-8")
-//                .cookie("NOPCOMMERCE.AUTH", cookieValue)
-//                .body(email)
-//                .when()
-//                .post("/subscribenewsletter")
-//                .then().log().all()
-//                .statusCode(200)
-//                .body("Success", is(true))
-//                .body("Result", is("Thank you for signing up! A verification email has been sent. We appreciate your interest."));
-//    }
+    @Test
+    @DisplayName("Проверка подписки на новости с валидным email")
+    void subscribeEmailTest() {
+        given()
+                .contentType("application/x-www-form-urlencoded; charset=UTF-8")
+                .cookie("NOPCOMMERCE.AUTH", cookieValue)
+                .body(email)
+                .when()
+                .post("/subscribenewsletter")
+                .then().log().all()
+                .statusCode(200)
+                .body("Success", is(true))
+                .body("Result", is("Thank you for signing up! A verification email has been sent. We appreciate your interest."));
+    }
 
     @Test
     @DisplayName("Проверка добавления товара в корзину для незарегистрированного пользователя")
