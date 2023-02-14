@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8276281-dbaa-4bba-a77f-9da062b4e74e" name="Changes" comment="demowebshop tests" />
+    <list default="true" id="e8276281-dbaa-4bba-a77f-9da062b4e74e" name="Changes" comment="demowebshop email subscription fix">
+      <change afterPath="$PROJECT_DIR$/src/test/java/reqres/helpers/CustomApiListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/reqres/tests/TestBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/tpl/request.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/tpl/response.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/reqres/ReqresInTestsExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/reqres/tests/ReqresInTestsExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/reqres/Specs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/reqres/specs/Specs.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,7 +54,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="lombokGroovy" />
+        <entry key="$PROJECT_DIR$" value="demowebshop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -64,10 +73,16 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/IdeaProjects/qa_guru_rest_api/src/test/resources/tpl&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.DemowebshopTest.subscribeEmailTest (1)">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\IdeaProjects\qa_guru_rest_api\src\test\resources\tpl" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.ReqresInTestsExample">
     <configuration name="DemowebshopTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -160,7 +175,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="DemowebshopTest.voteRegisteredUserTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ReqresInTestsExample" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -173,7 +188,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;demowebshop.DemowebshopTest.voteRegisteredUserTest&quot;" />
+            <option value="&quot;reqres.tests.ReqresInTestsExample&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -185,11 +200,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.ReqresInTestsExample" />
         <item itemvalue="Gradle.DemowebshopTest.subscribeEmailTest (1)" />
         <item itemvalue="Gradle.DemowebshopTest" />
         <item itemvalue="Gradle.DemowebshopTest.addToCartAnonymousTest" />
         <item itemvalue="Gradle.DemowebshopTest.subscribeWithInvalidEmailTest" />
-        <item itemvalue="Gradle.DemowebshopTest.voteRegisteredUserTest" />
       </list>
     </recent_temporary>
   </component>
@@ -208,6 +223,9 @@
       <workItem from="1675785959422" duration="751000" />
       <workItem from="1675835939540" duration="10000" />
       <workItem from="1676048246750" duration="4424000" />
+      <workItem from="1676096120261" duration="171000" />
+      <workItem from="1676344471406" duration="2554000" />
+      <workItem from="1676395224394" duration="2525000" />
     </task>
     <task id="LOCAL-00001" summary="1st">
       <created>1674385122277</created>
@@ -237,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676052797872</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="demowebshop email subscription fix">
+      <created>1676096258791</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1676096258791</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,6 +284,7 @@
     <MESSAGE value="Simple tests" />
     <MESSAGE value="Reqres.in tests +Lombok +Groovy" />
     <MESSAGE value="demowebshop tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="demowebshop tests" />
+    <MESSAGE value="demowebshop email subscription fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="demowebshop email subscription fix" />
   </component>
 </project>

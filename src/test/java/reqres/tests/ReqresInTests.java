@@ -1,5 +1,6 @@
-package reqres;
+package reqres.tests;
 
+import org.junit.jupiter.api.Tag;
 import reqres.models.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -7,10 +8,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
-import static org.junit.jupiter.api.Assertions.*;
-import static reqres.Specs.*;
+import static reqres.specs.Specs.*;
 
-public class ReqresInTestsExample {
+@Tag("api")
+public class ReqresInTests {
 
     @Test
     @DisplayName("Создание пользователя")
@@ -25,9 +26,7 @@ public class ReqresInTestsExample {
                 .when()
                 .post("/users")
                 .then()
-                .log().status()
-                .log().body()
-                .spec(response201)
+                .spec(response)
                 .extract().as(UserData.class);
         assertEquals("Tester", data.getName());
         assertEquals("Test-manager", data.getJob());
@@ -41,8 +40,7 @@ public class ReqresInTestsExample {
                 .when()
                 .get("/users/9")
                 .then()
-                .spec(response200)
-                .log().body()
+                .spec(response)
                 .extract().as(UserData.class);
         assertEquals(9, data.getUser().getId());
         assertEquals("tobias.funke@reqres.in", data.getUser().getEmail());
@@ -56,9 +54,7 @@ public class ReqresInTestsExample {
                 .when()
                 .get("/users/999999")
                 .then()
-                .log().status()
-                .log().body()
-                .spec(response404);
+                .statusCode(404);
     }
 
     @Test
@@ -69,7 +65,7 @@ public class ReqresInTestsExample {
                 .when()
                 .get("/users?page=2")
                 .then()
-                .log().body()
+                .spec(response)
                 .body("data.findAll{it.id}.last_name.flatten()",hasItem("Howell"))
                 .body("data.findAll{it.id == 7}.email", hasItem("michael.lawson@reqres.in"));
     }
@@ -87,9 +83,8 @@ public class ReqresInTestsExample {
                 .when()
                 .put("/users/2")
                 .then()
-                .log().status()
-                .log().body()
-                .spec(response200)
+                .spec(response)
+                .statusCode(200)
                 .body("name", is("TestBoss"))
                 .body("job", is("Boss"))
                 .extract().as(UserData.class);
@@ -103,8 +98,7 @@ public class ReqresInTestsExample {
                 .when()
                 .delete("/users/5")
                 .then()
-                .log().status()
-                .log().body()
-                .spec(response204);
+                .spec(response)
+                .statusCode(204);
     }
 }
