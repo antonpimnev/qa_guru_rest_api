@@ -12,7 +12,7 @@ public class TestBase {
 //                .baseUri("https://reqres.in")
 //                .basePath("/api");
         RestAssured.filters(withCustomTemplates());
-//        RestAssured.baseURI = "https://reqres.in";
-//        RestAssured.basePath = "/api";
+        RestAssured.baseURI = "https://reqres.in";
+        RestAssured.basePath = "/api";
     }
 }
