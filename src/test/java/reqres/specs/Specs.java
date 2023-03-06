@@ -8,6 +8,7 @@ import io.restassured.specification.ResponseSpecification;
 import static io.restassured.RestAssured.with;
 import static io.restassured.filter.log.LogDetail.BODY;
 import static io.restassured.filter.log.LogDetail.STATUS;
+import static reqres.data.Data.BASE_URL;
 import static reqres.helpers.CustomApiListener.withCustomTemplates;
 
 public class Specs {
@@ -17,7 +18,7 @@ public class Specs {
             .log().body()
             .filter(withCustomTemplates())
             .contentType(ContentType.JSON)
-            .baseUri("https://reqres.in")
+            .baseUri(BASE_URL)
             .basePath("/api");
 
     public static ResponseSpecification response = new ResponseSpecBuilder()

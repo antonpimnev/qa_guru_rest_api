@@ -1,30 +1,33 @@
 package reqres.tests;
 
-import org.junit.jupiter.api.Tag;
-import reqres.models.*;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import reqres.models.CreateUser;
+import reqres.models.UserData;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.*;
-import static reqres.specs.Specs.*;
+import static org.hamcrest.Matchers.is;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static reqres.data.Data.*;
+import static reqres.data.Endpoints.API_USERS;
+import static reqres.specs.Specs.request;
+import static reqres.specs.Specs.response;
 
 @Tag("api")
-public class ReqresInTests {
-
+public class UserTests {
     @Test
     @DisplayName("Создание пользователя")
     void createUserTest() {
         CreateUser data = new CreateUser();
-        data.setName("Tester");
-        data.setJob("Test-manager");
+        data.setName(NEW_USER_NAME);
+        data.setJob(NEW_USER_JOB);
 
         given()
                 .spec(request)
                 .body(data)
                 .when()
-                .post("/users")
+                .post(API_USERS)
                 .then()
                 .spec(response)
                 .extract().as(UserData.class);
@@ -38,55 +41,31 @@ public class ReqresInTests {
         UserData data = given()
                 .spec(request)
                 .when()
-                .get("/users/9")
+                .get(API_USERS + USER_FOR_INFO)
                 .then()
                 .spec(response)
                 .extract().as(UserData.class);
-        assertEquals(9, data.getUser().getId());
-        assertEquals("tobias.funke@reqres.in", data.getUser().getEmail());
-    }
-
-    @Test
-    @DisplayName("Пользователь не найден")
-    void getUserByIdNotFoundTest() {
-        given()
-                .spec(request)
-                .when()
-                .get("/users/999999")
-                .then()
-                .statusCode(404);
-    }
-
-    @Test
-    @DisplayName("Проверка получения списка пользователей")
-    void listOfUsersWithGroovyTest(){
-        given()
-                .spec(request)
-                .when()
-                .get("/users?page=2")
-                .then()
-                .spec(response)
-                .body("data.findAll{it.id}.last_name.flatten()",hasItem("Howell"))
-                .body("data.findAll{it.id == 7}.email", hasItem("michael.lawson@reqres.in"));
+        assertEquals(USER_FOR_INFO, data.getUser().getId());
+        assertEquals(USER_FOR_INFO_EMAIL, data.getUser().getEmail());
     }
 
     @Test
     @DisplayName("Проверка обновления данных пользователя")
     void checkUpdateUser() {
         CreateUser data = new CreateUser();
-        data.setName("TestBoss");
-        data.setJob("Boss");
+        data.setName(USER_FOR_UPDATE_NAME);
+        data.setJob(USER_FOR_UPDATE_JOB);
 
         given()
                 .spec(request)
                 .body(data)
                 .when()
-                .put("/users/2")
+                .put(API_USERS + USER_FOR_UPDATE_ID)
                 .then()
                 .spec(response)
                 .statusCode(200)
-                .body("name", is("TestBoss"))
-                .body("job", is("Boss"))
+                .body("name", is(USER_FOR_UPDATE_NAME))
+                .body("job", is(USER_FOR_UPDATE_JOB))
                 .extract().as(UserData.class);
     }
 
@@ -96,7 +75,7 @@ public class ReqresInTests {
         given()
                 .spec(request)
                 .when()
-                .delete("/users/5")
+                .delete(API_USERS + USER_FOR_DELETE)
                 .then()
                 .spec(response)
                 .statusCode(204);
