@@ -16,7 +16,7 @@
 - <a href="#allure-testops">Интеграция с Allure TestOps</a>
 - <a href="#telegram">Уведомление в Telegram о результатах запуска тестов</a>
 
-<a id="tools">
+<a id="tools"></a>
 ## Технологии и инструменты
 
 <p align="center">
@@ -46,11 +46,20 @@
 ## Запуск тестов
 
 ###  Локальный запуск :
-1. Запуск с командной строки: gradle clean test
-2. Получение отчёта: gradle allureServe
+1. Запуск с командной строки:
+```bash
+gradle clean test
+```
+> Для запуска тестов в несколько потоков необходимо добавить параметр <code>-Dthreads={Количество потоков}</code>
+>
+> Например: <code>gradle clean test -Dthreads=2</code>
+2. Получение отчёта:
+```bash
+gradle allureServe
+```
 
 ###  Удаленный запуск (в Jenkins):
-1. Открыть <a target="_blank" href="https://jenkins.autotests.cloud/job/C16-NazilyaMullagildina_API-tests/">проект</a>
+1. Открыть <a target="_blank" href="https://jenkins.autotests.cloud/job/C16-antonpimnev-diplom-api/">проект</a>
 
 ![This is an image](/images/screens/api-Jenkins-main.png)
 
